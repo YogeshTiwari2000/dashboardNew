@@ -1,0 +1,193 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+/* You can add global styles to this file, and also import other style files */
+
+/* video-list.component.css */
+.pagination {
+     display: flex;
+     justify-content: center;
+   }
+   
+   .pagination-controls {
+     margin-top: 20px;
+   }
+   
+/* From Uiverse.io by SchawnnahJ */ 
+.loader {
+    position: relative;
+    width: 2.5em;
+    height: 2.5em;
+    transform: rotate(165deg);
+   }
+   
+   .loader:before, .loader:after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    display: block;
+    width: 0.5em;
+    height: 0.5em;
+    border-radius: 0.25em;
+    transform: translate(-50%, -50%);
+   }
+   
+   .loader:before {
+    animation: before8 2s infinite;
+   }
+   
+   .loader:after {
+    animation: after6 2s infinite;
+   }
+   
+   @keyframes before8 {
+    0% {
+     width: 0.5em;
+     box-shadow: 1em -0.5em rgba(225, 20, 98, 0.75), -1em 0.5em rgba(111, 202, 220, 0.75);
+    }
+   
+    35% {
+     width: 2.5em;
+     box-shadow: 0 -0.5em rgba(225, 20, 98, 0.75), 0 0.5em rgba(111, 202, 220, 0.75);
+    }
+   
+    70% {
+     width: 0.5em;
+     box-shadow: -1em -0.5em rgba(225, 20, 98, 0.75), 1em 0.5em rgba(111, 202, 220, 0.75);
+    }
+   
+    100% {
+     box-shadow: 1em -0.5em rgba(225, 20, 98, 0.75), -1em 0.5em rgba(111, 202, 220, 0.75);
+    }
+   }
+   
+   @keyframes after6 {
+    0% {
+     height: 0.5em;
+     box-shadow: 0.5em 1em rgba(61, 184, 143, 0.75), -0.5em -1em rgba(233, 169, 32, 0.75);
+    }
+   
+    35% {
+     height: 2.5em;
+     box-shadow: 0.5em 0 rgba(61, 184, 143, 0.75), -0.5em 0 rgba(233, 169, 32, 0.75);
+    }
+   
+    70% {
+     height: 0.5em;
+     box-shadow: 0.5em -1em rgba(61, 184, 143, 0.75), -0.5em 1em rgba(233, 169, 32, 0.75);
+    }
+   
+    100% {
+     box-shadow: 0.5em 1em rgba(61, 184, 143, 0.75), -0.5em -1em rgba(233, 169, 32, 0.75);
+    }
+   }
+   
+   .loader {
+    position: absolute;
+    top: calc(50% - 1.25em);
+    left: calc(50% - 1.25em);
+   }
+
+
+
+   /* fonts */
+   /* Regular Weight (400) */
+@font-face {
+    font-family: 'Gilroy';
+    src: url('/assets/fonts/Gilroy-Regular.tff') format('tff'),
+         url('/assets/fonts/Gilroy-Regular.tff') format('tff');
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+  /* Medium Weight (500) */
+  @font-face {
+    font-family: 'Gilroy';
+    src: url('/assets/fonts/Gilroy-Medium.tff') format('tff'),
+         url('/assets/fonts/Gilroy-Medium.tff') format('tff');
+    font-weight: 500;
+    font-style: normal;
+  }
+  
+  /* Semi-Bold Weight (600) */
+  @font-face {
+    font-family: 'Gilroy';
+    src: url('/assets/fonts/Gilroy-SemiBold.tff') format('tff'),
+         url('/assets/fonts/Gilroy-SemiBold.tff') format('tff');
+    font-weight: 600;
+    font-style: normal;
+  }
+  
+  /* Bold Weight (700) */
+  @font-face {
+    font-family: 'Gilroy';
+    src: url('/assets/fonts/Gilroy-Bold.tff') format('tff'),
+         url('/assets/fonts/Gilroy-Bold.tff') format('tff');
+    font-weight: 700;
+    font-style: normal;
+  }
+  
+  /* Extra Bold Weight (800) */
+  @font-face {
+    font-family: 'Gilroy';
+    src: url('/assets/fonts/Gilroy-ExtraBold.tff') format('tff'),
+         url('/assets/fonts/Gilroy-ExtraBold.tff') format('tff');
+    font-weight: 800;
+    font-style: normal;
+  }
+  
+  /* Black Weight (900) */
+  @font-face {
+    font-family: 'Gilroy';
+    src: url('/assets/fonts/Gilroy-Black.tff') format('tff'),
+         url('/assets/fonts/Gilroy-Black.tff') format('tff');
+    font-weight: 900;
+    font-style: normal;
+  }
+  
+  /* Italic Styles */
+  @font-face {
+    font-family: 'Gilroy';
+    src: url('/assets/fonts/Gilroy-Italic.tff') format('tff'),
+         url('/assets/fonts/Gilroy-Italic.tff') format('tff');
+    font-weight: 400; /* Adjust if there are different weights for italic */
+    font-style: italic;
+  }
+  
+  /* Semi-Bold Italic */
+  @font-face {
+    font-family: 'Gilroy';
+    src: url('/assets/fonts/Gilroy-SemiBold-Italic.tff') format('tff'),
+         url('/assets/fonts/Gilroy-SemiBold-Italic.tff') format('tff');
+    font-weight: 600;
+    font-style: italic;
+  }
+  
+  /* Bold Italic */
+  @font-face {
+    font-family: 'Gilroy';
+    src: url('/assets/fonts/Gilroy-Bold-Italic.tff') format('tff'),
+         url('/assets/fonts/Gilroy-Bold-Italic.tff') format('tff');
+    font-weight: 700;
+    font-style: italic;
+  }
+  
+  /* Extra Bold Italic */
+  @font-face {
+    font-family: 'Gilroy';
+    src: url('/assets/fonts/Gilroy-ExtraBold-Italic.tff') format('tff'),
+         url('/assets/fonts/Gilroy-ExtraBold-Italic.tff') format('tff');
+    font-weight: 800;
+    font-style: italic;
+  }
+  
+  /* Black Italic */
+  @font-face {
+    font-family: 'Gilroy';
+    src: url('/assets/fonts/Gilroy-Black-Italic.tff') format('tff'),
+         url('/assets/fonts/Gilroy-Black-Italic.tff') format('tff');
+    font-weight: 900;
+    font-style: italic;
+  }
+  

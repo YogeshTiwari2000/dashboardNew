@@ -1,0 +1,63 @@
+
+<div class="max-w-xl mx-auto mt-10 p-6 border rounded shadow bg-white">
+    <h2 class="text-xl font-bold mb-6">{{ isEditMode() ? 'Edit' : 'Add' }} User</h2>
+
+    <!-- Rest of the form remains the same -->
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+        <!-- Name -->
+        <div class="mb-4">
+            <label class="block font-medium">Name</label>
+            <input type="text" formControlName="name" class="w-full px-3 py-2 border rounded" />
+            <p class="text-red-500 text-sm" *ngIf="form.get('name')?.touched && form.get('name')?.invalid">
+                Name is required.
+            </p>
+        </div>
+
+        <!-- Email -->
+        <div class="mb-4">
+            <label class="block font-medium">Email</label>
+            <input type="email" formControlName="email" class="w-full px-3 py-2 border rounded" />
+            <p class="text-red-500 text-sm" *ngIf="form.get('email')?.touched && form.get('email')?.invalid">
+                Valid email is required.
+            </p>
+        </div>
+
+        <!-- Phone -->
+        <div class="mb-4">
+            <label class="block font-medium">Phone</label>
+            <input type="text" formControlName="phone" class="w-full px-3 py-2 border rounded" />
+        </div>
+
+        <!-- Role Dropdown -->
+        <div class="mb-4">
+            <label class="block font-medium">Role</label>
+            <select formControlName="role" class="w-full px-3 py-2 border rounded">
+                <option *ngFor="let role of roles" [value]="role">{{ role }}</option>
+            </select>
+        </div>
+
+        <!-- Status Radio -->
+        <div class="mb-4">
+            <label class="block font-medium mb-2">Status</label>
+            <label class="mr-4">
+                <input type="radio" formControlName="status" value="Active" class="mr-1" />
+                Active
+            </label>
+            <label>
+                <input type="radio" formControlName="status" value="Inactive" class="mr-1" />
+                Inactive
+            </label>
+        </div>
+
+        <!-- Buttons -->
+        <div class="mt-6 flex justify-end gap-4">
+            <button type="button" class="px-4 py-2 border rounded bg-gray-200" (click)="onCancel()">
+                Cancel
+            </button>
+
+            <button type="submit" class="px-4 py-2 bg-blue-600 text-white rounded" [disabled]="isSubmitting()">
+                {{ isSubmitting() ? 'Submitting...' : (isEditMode() ? 'Update' : 'Submit') }}
+            </button>
+        </div>
+    </form>
+</div>

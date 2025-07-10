@@ -1,0 +1,27 @@
+<!-- <div class="fixed hidden lg:flex flex-col h-screen w-[20%] bg-gray-900 text-white left-0 top-0"> -->
+<div class="flex flex-col h-full w-full  bg-gray-900 text-white">
+
+  <div class="flex items-center justify-start py-4 px-4 border-b border-gray-700">
+    <span class="text-2xl font-bold">User Management</span>
+  </div>
+
+  <div class="mt-10 flex flex-col space-y-4 px-4">
+    <ng-container *ngFor="let link of navLinks">
+      <ng-container *ngIf="!link.action">
+        <a [routerLink]="[link.path]" routerLinkActive="bg-blue-600 text-white"
+          class="flex items-center py-2 px-4 rounded hover:bg-gray-700">
+          <i class="fa-solid" [ngClass]="link.icon"></i>
+          <span class="ml-3">{{ link.title }}</span>
+        </a>
+      </ng-container>
+      <ng-container *ngIf="link.action === 'logout'">
+        <a (click)="onLogout()" class="flex items-center py-2 px-4 rounded hover:bg-gray-700 cursor-pointer">
+          <i class="fa-solid" [ngClass]="link.icon"></i>
+          <span class="ml-3">{{ link.title }}</span>
+        </a>
+      </ng-container>
+    </ng-container>
+  </div>
+</div>
+
+
