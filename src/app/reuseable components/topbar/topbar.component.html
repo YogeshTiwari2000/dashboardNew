@@ -1,7 +1,16 @@
-<header class="top-0 z-50 flex items-center justify-between px-6 py-4 bg-white shadow-md">
+<!-- <header class="top-0 z-50 flex items-center justify-between px-6 py-4 bg-white shadow-md"> -->
+    <header
+  class="top-0 z-50 flex items-center justify-between px-6 py-4 bg-white shadow-md dark:bg-gray-800 dark:text-white"
+>
+    
     <h1 class="text-lg font-semibold text-gray-700">Dashboard</h1>
 
-    <div class="relative">
+    <div class="relative flex flex-row gap-3">
+        <button (click)="toggleTheme()"
+            class="ml-4 text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white"
+            title="Toggle Theme">
+            <span class="material-icons">{{ theme === 'dark' ? 'light_mode' : 'dark_mode' }}</span>
+        </button>
         <button (click)="toggleMenu()"
             class="flex items-center bg-gray-100 hover:bg-gray-200 px-4 py-2 rounded-lg shadow transition space-x-3 focus:outline-none">
             <div class="text-left">
@@ -9,12 +18,11 @@
                 <p class="text-xs italic text-gray-500">Admin</p>
             </div>
 
-            <img
-  class="w-8 h-8 object-cover rounded-full"
-  src="https://www.w3schools.com/howto/img_avatar.png"
-  alt="User Avatar"
-/>
+            <img class="w-8 h-8 object-cover rounded-full" src="https://www.w3schools.com/howto/img_avatar.png"
+                alt="User Avatar" />
         </button>
+        <!--  -->
+
 
         <div *ngIf="menuOpen"
             class="absolute right-0 mt-2 w-48 bg-white border border-gray-200 rounded-md shadow-lg animate-fade-in z-10">

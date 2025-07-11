@@ -10,6 +10,20 @@ import { Router } from '@angular/router';
   styleUrls: ['./topbar.component.css']
 })
 export class TopbarComponent {
+
+  theme: 'light' | 'dark' = 'light';
+
+toggleTheme() {
+  this.theme = this.theme === 'light' ? 'dark' : 'light';
+  const root = document.documentElement;
+  if (this.theme === 'dark') {
+    root.classList.add('dark');
+  } else {
+    root.classList.remove('dark');
+  }
+}
+
+
   menuOpen = false;
   loggedInUserName = 'Guest';
 
